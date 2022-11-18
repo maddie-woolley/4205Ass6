@@ -17,12 +17,21 @@ crop_prediction = pd.read_csv('cpdata (1).csv')
 import seaborn as sb
 
 corrMatrix = crop_prediction.corr()
-sb.heatmap(corrMatrix, annot=True)
-# plt.show()
-# initialize/ print pair plot
-sb.pairplot(crop_prediction)
+# print(corrMatrix)
+# sb.heatmap(corrMatrix, annot=True)
 # plt.show()
 
+
+# Part 3-
+# count-plot
+sb.countplot(data=crop_prediction, y="label")
+plt.show()
+# Box Plot
+sb.boxplot(crop_prediction[['temperature', 'humidity', 'ph', 'rainfall']])
+plt.show()
+# pairplot
+sb.pairplot(crop_prediction)
+plt.show()
 
 # Part 4 -Random Forest
 
